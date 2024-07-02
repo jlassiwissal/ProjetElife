@@ -1,0 +1,152 @@
+<form [formGroup]="addEquipeForm">
+<div class="d-flex flex-center flex-column flex-column-fluid">
+    <!--begin::Wrapper-->
+    <div class="w-lg-650px w-xl-700px p-10 p-lg-15 mx-auto">
+        <!--begin::Form-->
+
+
+        <!--begin::Step 2-->
+        <div class="current" data-kt-stepper-element="content">
+            <!--begin::Wrapper-->
+            <div class="w-100">
+
+
+                <!--begin::Input group-->
+                <div class="mb-10 fv-row fv-plugins-icon-container fv-plugins-bootstrap5-row-valid">
+
+
+
+
+
+                    <div class="fv-plugins-message-container invalid-feedback"></div>
+                </div>
+                <!--end::Input group-->
+
+                <!--begin::Input group-->
+                <div class="mb-10 fv-row fv-plugins-icon-container fv-plugins-bootstrap5-row-invalid">
+                    <!--begin::Label-->
+                    <label class="form-label mb-3">Team Name</label>
+                    <!--end::Label-->
+
+                    <!--begin::Input-->
+                    <input type="text" formControlName="nomEquipe" class="form-control form-control-lg form-control-solid" name="nomEquipe"
+                        placeholder="" value="">
+                    <!--end::Input-->
+                </div>
+                <!--end::Input group-->
+                <!--begin::Input group-->
+                <div class="mb-10 fv-row fv-plugins-icon-container fv-plugins-bootstrap5-row-invalid">
+                    <!--begin::Label-->
+                    <label class="form-label mb-3">leader</label>
+                    <!--end::Label-->
+
+                    <!--begin::Input-->
+                    <!-- <input type="text" class="form-control form-control-lg form-control-solid" name="chefEquipe" placeholder="" value=""> -->
+                    <!--end::Input-->
+                    <div class="m-0">
+                        <!--begin::Select-->
+                        <select formControlName="chefEquipe" name="status" data-control="select2" data-hide-search="true"
+                            class="form-select" data-select2-id="select2-data-10-u5ji" tabindex="-1" aria-hidden="true"
+                            data-kt-initialized="1">
+                            <option *ngFor="let u of chefList" value="{{u.id}}" selected=""
+                                data-select2-id="select2-data-12-lnie">{{u.nom + ' '+u.prenom}}</option>
+
+                            <!--end::Select-->
+                        </select>
+                    </div>
+
+
+                </div>
+                <!--end::Input group-->
+                <!--begin: :membre equipe-->
+                <div class="modal-body scroll-y m-5" data-select2-id="select2-data-424-589p">
+                    <!--begin::Stepper-->
+                    <div class="stepper stepper-links d-flex flex-column between" id="kt_modal_create_project_stepper"
+                        data-kt-stepper="true" data-select2-id="select2-data-kt_modal_create_project_stepper">
+                        <!--begin::Container-->
+                        <div class="container" data-select2-id="select2-data-423-21j5">
+
+
+                            <!--begin::Form-->
+
+
+
+
+                            <!--begin::Team-->
+                            <div data-kt-stepper-element="content" class="current">
+                                <!--begin::Wrapper-->
+                                <div class="w-100">
+
+
+
+
+                                    <!--begin::Input group-->
+                                    <div class="mb-8">
+                                        <!--begin::Label-->
+                                        <div class="fs-6 fw-semibold mb-2">Team Members</div>
+                                        <!--end::Label-->
+
+                                        <!--begin::Users-->
+                                        <div class="mh-300px scroll-y me-n7 pe-7">
+                                            <!--begin::User-->
+                                            <div *ngFor="let u of userList"
+                                                class="d-flex flex-stack py-4 border-bottom border-gray-300 border-bottom-dashed">
+                                                <!--begin::Details-->
+                                                <div class="d-flex align-items-center">
+                                                    <!--begin::Avatar-->
+                                                    <input class="form-check-input" type="checkbox" value="true"
+                                                        (change)="addMembre(u, $event)">
+                                                    <div class="symbol symbol-35px symbol-circle">
+                                                        <img alt="Pic" src="../assets/media/avatars/300-6.jpg">
+                                                    </div>
+                                                    <!--end::Avatar-->
+
+                                                    <!--begin::Details-->
+                                                    <div class="ms-5">
+                                                        <a href="#"
+                                                            class="fs-5 fw-bold text-gray-900 text-hover-primary mb-2">{{u.nom
+                                                            +' '+ u.prenom}}</a>
+
+                                                        <div class="fw-semibold text-muted">{{u.mail}}</div>
+                                                    </div>
+                                                    <!--end::Details-->
+                                                </div>
+                                                <!--end::Details-->
+                                            </div>
+                                            <!--end::User-->
+
+
+
+
+
+                                        </div>
+                                        <!--end::Users-->
+                                    </div>
+                                    <!--end::Input group-->
+                                </div>
+                                <!--end::Wrapper-->
+                            </div>
+                            <!--end::Team-->
+                            <!--begin::Complete-->
+                            <!--begin::Actions-->
+                            <div class="d-flex flex-stack pt-15">
+                                <div>
+                                    <button (click)="addEquipe()" type="button" class="btn btn-lg btn-primary"
+                                        data-kt-stepper-action="next">
+                                        Create
+                                        <i class="ki-duotone ki-arrow-right fs-4 ms-1"><span class="path1"></span><span
+                                                class="path2"></span></i> </button>
+                                </div>
+                            </div>
+                            <!--end::Actions-->
+                            <!--end::Form-->
+                        </div>
+                        <!--end::Wrapper-->
+                    </div>
+                    </div>
+
+                    </div>
+                    </div>
+                    </div>
+                    </div>
+                </form>
